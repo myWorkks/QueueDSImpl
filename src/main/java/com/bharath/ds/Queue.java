@@ -29,7 +29,7 @@ public class Queue<E> {
 	}
 
 	// adding an element to queue
-	public void enQueue(E a) {
+	public void addElement(E a) {
 		// before adding check the queue is full or not
 		if (isFull(this))
 			throw new RuntimeException("queue is full");
@@ -52,7 +52,7 @@ public class Queue<E> {
 	}
 
 //removing an element
-	public E deQueue() {
+	public E removeElement() {
 		if (this.isEmpty())
 			throw new RuntimeException("Queue is empty");
 		E a = array[front_index];
@@ -62,14 +62,14 @@ public class Queue<E> {
 	}
 
 //finding an element at first index
-	public E first() {
+	public E firstElement() {
 		if (this.isEmpty())
 			throw new RuntimeException("Queue is empty");
 		return array[front_index];
 	}
 
 //finding an element at las index
-	public E last() {
+	public E lastElement() {
 		if (this.isEmpty())
 			throw new RuntimeException("Queue is empty");
 		return array[rear_index - 1];
@@ -80,16 +80,14 @@ class Tester {
 	public static void main(String[] args) {
 		Queue<Integer> q = new Queue<>(5);
 
-		q.enQueue(10);
+		q.addElement(10);
 
-		
+		System.out.println(q.firstElement());
+		System.out.println(q.lastElement());
 
-		System.out.println(q.first());
-		System.out.println(q.last());
-
-		Queue<String> qs = new Queue<>(10);
-		qs.enQueue("bharath");
-		System.out.println(qs.first());
-		System.out.println(qs.last());
+		Queue<String> qs = new Queue<String>(10);
+		qs.addElement("bharath");
+		System.out.println(qs.firstElement());
+		System.out.println(qs.lastElement());
 	}
 }

@@ -29,7 +29,7 @@ public class QueueWithInteger {
 	}
 
 	// adding an element to queue
-	public void enQueue(int a) {
+	public void addElement(int a) {
 		// before adding check the queue is full or not
 		if (isFull(this))
 			throw new RuntimeException("queue is full");
@@ -52,7 +52,7 @@ public class QueueWithInteger {
 	}
 
 	// removing an element
-	public int deQueue() {
+	public int removeElement() {
 		if (this.isEmpty())
 			throw new RuntimeException("Queue is empty");
 		int a = array[front_index];
@@ -62,14 +62,14 @@ public class QueueWithInteger {
 	}
 
 	// finding an element at first index
-	public int first() {
+	public int firstElement() {
 		if (this.isEmpty())
 			throw new RuntimeException("Queue is empty");
 		return array[front_index];
 	}
 
 	// finding an element at las index
-	public int last() {
+	public int lastElement() {
 		if (this.isEmpty())
 			throw new RuntimeException("Queue is empty");
 		return array[rear_index - 1];
@@ -79,12 +79,12 @@ public class QueueWithInteger {
 class TesterWithInteger {
 	public static void main(String[] args) {
 		QueueWithInteger q = new QueueWithInteger(10);
-		q.enQueue(10);
-		q.enQueue(20);
+		q.addElement(10);
+		q.addElement(20);
 		System.out.println(q.capacity());
 		System.out.println(q.size());
-		System.out.println(q.first());
-		System.out.println(q.last());
+		System.out.println(q.firstElement());
+		System.out.println(q.lastElement());
 
 	}
 }
